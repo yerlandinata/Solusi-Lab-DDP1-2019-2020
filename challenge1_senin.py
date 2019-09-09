@@ -17,9 +17,7 @@ sudut = 360 - 2*math.degrees(sudut)
 turtle.circle(r1)
  
 # gerak ke posisi singgung
-turtle.penup()
 turtle.circle(r1, sudut)
-turtle.pendown()
  
 # buat garis singgung
 turtle.forward(d)
