@@ -8,9 +8,9 @@ Created on Sun Sep  8 17:38:48 2019
 import turtle
 import math
 
-a = 100
-b = 200
-t = 150
+a = float(input('a: '))
+b = float(input('b: '))
+t = float(input('t: '))
 
 c = math.sqrt(math.pow(t, 2) + math.pow(b-a, 2))
 alpha_rad = math.asin(t/c)
