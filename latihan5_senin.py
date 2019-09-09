@@ -12,15 +12,19 @@ a = float(input('a: '))
 b = float(input('b: '))
 t = float(input('t: '))
 
-c = math.sqrt(math.pow(t, 2) + math.pow(b-a, 2))
-alpha_rad = math.asin(t/c)
-alpha_deg = math.degrees(alpha_rad)
+c_squared = math.pow(t, 2) + math.pow(b-a, 2)
+
+c = math.sqrt(c_squared)
+
+theta_rad = math.asin(t/c)
+theta_deg = math.degrees(theta_rad)
+
 
 turtle.right(180)
-turtle.right(alpha_deg)
+turtle.right(theta_deg)
 turtle.forward(c)
 
-turtle.left(alpha_deg)
+turtle.left(theta_deg)
 
 turtle.forward(a)
 
