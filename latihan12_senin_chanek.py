@@ -96,7 +96,7 @@ def simulasi(teks_input):
             elif jenis == STROBERI:
                 stok_donat_stroberi -= jumlah
                 keuntungan += harga_donat_stroberi * jumlah
-                if stok_donat_stroberi < jumlah:
+                if stok_donat_cokelat < jumlah:
                     stok_tidak_cukup(STROBERI)
 
         elif perintah == PERINTAH_KEUNTUNGAN:
