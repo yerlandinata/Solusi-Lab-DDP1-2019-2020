@@ -1,3 +1,8 @@
+'''
+Author: Chanek
+Last Modified: Oct 7 2019
+'''
+
 COKELAT = 'cokelat'
 STROBERI = 'stroberi'
 PERINTAH_PRODUKSI = 'PRODUKSI'
@@ -10,6 +15,21 @@ def promo(jenis):
     Mencetak peringatan promo
     '''
     print('DONAT {} SEDANG PROMO'.format(jenis))
+
+def paksa_untung(keuntungan):
+    '''
+    Apabila keuntungan negatif, maka fungsi bubar() akan dipanggil
+    '''
+    if keuntungan < 0:
+        bubar(keuntungan)
+
+def bubar(keuntungan):
+    '''
+    Fungsi ini dipanggil apabila perintah paksa untung gagal
+    '''
+    print('BELUM REJEKI')
+    laporkan_keuntungan(keuntungan)
+    exit()
 
 def stok_tidak_cukup(jenis):
     '''
@@ -42,6 +62,7 @@ def simulasi(teks_input):
     harga_donat_cokelat = 0
     harga_donat_stroberi = 0
     keuntungan = 0
+    kemiskinan = ''
 
     for baris in teks_input.split('\n'):
         perintah = parse_jenis_perintah(baris)
@@ -81,9 +102,16 @@ def simulasi(teks_input):
         elif perintah == PERINTAH_KEUNTUNGAN:
             laporkan_keuntungan(keuntungan)
 
+        # aduh saya sebenernya udah ngerjain implementasi CEPATKAYA,
+        # tapi laptop saya mati terus gak kesave,
+        # tapi saya sudah buatkan function bubar() dan function paksa_untung(), silakan gunakan
+
+        # untuk implementasi KAPANMISKIN, saya belum sempat kerjakan, tolong yah ;)
+        # tapi saya sudah buatkan variabel 'kemiskinan' untuk menyimpan daftar perintah
+
     laporkan_keuntungan(keuntungan)
 
-NAMA_FILE_INPUT = input('File input: ')
-with open(NAMA_FILE_INPUT) as f:
-    simulasi(f.read())
-
+if __name__ == "__main__":
+    NAMA_FILE_INPUT = input('File input: ')
+    with open(NAMA_FILE_INPUT) as f:
+        simulasi(f.read())
